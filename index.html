@@ -2,6 +2,7 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>化妝MBTI測驗</title>
 
 <style>
@@ -12,108 +13,111 @@ body{
   text-align:center;
 }
 
-/* 共用 */
 .page{
   display:none;
-  padding:40px 20px;
+  padding:30px 16px;
 }
 .active{
   display:block;
 }
 
-/* 按鈕 */
 .btn{
   background:#eee;
   border:none;
   padding:12px 30px;
   border-radius:20px;
-  font-size:18px;
-  cursor:pointer;
+  font-size:16px;
 }
 
-/* ===== 首頁 ===== */
+/* 首頁 */
 .title-box{
   background:#eee;
-  display:inline-block;
-  padding:15px 30px;
+  padding:12px 24px;
   border-radius:30px;
-  font-size:28px;
-  margin-bottom:40px;
+  font-size:22px;
 }
 .desc{
-  line-height:1.8;
-  font-size:18px;
-  color:#6b5b5b;
-  margin-bottom:40px;
+  font-size:15px;
+  line-height:1.6;
+  margin:30px 0;
 }
 
-/* ===== 測驗 ===== */
+/* 題目 */
 .question{
-  font-size:22px;
-  margin-bottom:30px;
+  font-size:20px;
+  margin-bottom:20px;
 }
 .option{
-  display:block;
-  margin:15px auto;
-  width:80%;
-  padding:15px;
+  width:100%;
+  padding:14px;
+  margin:10px 0;
   border-radius:20px;
-  background:#eee;
+  font-size:16px;
   border:none;
-  font-size:18px;
+  background:#eee;
 }
 
-/* ===== 結果 ===== */
+/* 結果 */
 .card{
   background:#eee;
   border-radius:20px;
-  padding:10px 20px;
-  display:inline-block;
-  margin-bottom:20px;
-  font-size:24px;
+  padding:8px 16px;
+  font-size:20px;
+  margin:10px 0;
 }
 
 .model-img{
-  width:220px;
-  border-radius:10px;
+  width:100%;
+  max-width:260px;
+  border-radius:12px;
+  margin:10px 0;
 }
 
 .text{
-  max-width:400px;
-  margin:20px auto;
-  line-height:1.8;
-  color:#6b5b5b;
+  font-size:14px;
+  line-height:1.6;
+  margin:15px 0;
 }
 
+/* 產品 */
 .product-box{
   border:2px solid #333;
-  padding:10px;
+  padding:15px;
   margin-top:20px;
 }
 
 .products{
   display:flex;
   justify-content:space-around;
+  gap:10px;
 }
 
-.products img{
-  width:70px;
+.product-item{
+  width:30%;
 }
 
-/* ✅ 改好的購買按鈕 */
+.product-item img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+.product-name{
+  font-size:12px;
+  margin-top:5px;
+}
+
+/* 購買 */
 .buy{
   display:inline-block;
-  margin-top:30px;
-  font-size:20px;
-  text-decoration:none;
+  margin-top:25px;
+  font-size:18px;
   color:white;
   background:#ff6b81;
-  padding:12px 30px;
+  padding:12px 24px;
   border-radius:25px;
-}
-
-.buy:hover{
-  background:#ff4d6d;
+  text-decoration:none;
 }
 </style>
 
@@ -121,35 +125,26 @@ body{
 
 <body>
 
-<!-- ===== 頁面1：前言 ===== -->
+<!-- 首頁 -->
 <div id="page1" class="page active">
-
   <div class="title-box">💄 化妝MBTI測驗</div>
 
   <div class="desc">
     嘿你知道嗎，MBTI其實會隨情境轉換<br>
-    有些人在工作時會用E人的方式去交際<br>
-    有些時候P人會用J人的方式思考<br>
     一起來看看妳化妝時的MBTI是什麼吧
   </div>
 
   <button class="btn" onclick="startQuiz()">開始 →</button>
-
 </div>
 
-
-<!-- ===== 頁面2：測驗 ===== -->
+<!-- 測驗 -->
 <div id="page2" class="page">
-
   <div class="question" id="question"></div>
-
   <button class="option" onclick="answer('A')" id="optA"></button>
   <button class="option" onclick="answer('B')" id="optB"></button>
-
 </div>
 
-
-<!-- ===== 頁面3：結果 ===== -->
+<!-- 結果 -->
 <div id="page3" class="page">
 
   <div class="card" id="mbtiTitle"></div>
@@ -165,17 +160,15 @@ body{
     <div class="products" id="products"></div>
   </div>
 
-  <!-- ✅ 可點擊導購 -->
   <a href="https://www.amfairyland.com/products" target="_blank" class="buy">
-    找到我的命定妝 →
+    入手同款妝容 →
   </a>
 
 </div>
 
-
 <script>
 
-// ===== 題目 =====
+// 題目
 const questions = [
   {q:"你化完妝最在意的是？", A:"別人有沒有發現", B:"自己看起來舒服", type:["E","I"]},
   {q:"你覺得好看的妝是？", A:"乾淨無瑕", B:"有氛圍感", type:["S","N"]},
@@ -186,12 +179,12 @@ const questions = [
 let current = 0;
 let result = [];
 
-// ===== 資料 =====
+// 資料（示範）
 const data = {
 "INFP":{
   title:"🌷 INFP 人間仙女",
   makeup:"溫柔氛圍妝",
-  desc:"你屬於內斂又感受力很強的人，不喜歡過於張揚的風格，低飽和粉調讓你自然散發溫柔氣質。",
+  desc:"你屬於內斂又感受力很強的人，低飽和粉調讓你自然散發溫柔氣質。",
   model:"images/models/INFP.jpg",
   products:[
     {img:"images/products/小蜜乳.png"},
@@ -201,14 +194,14 @@ const data = {
 }
 };
 
-// ===== 開始 =====
+// 開始
 function startQuiz(){
   document.getElementById("page1").classList.remove("active");
   document.getElementById("page2").classList.add("active");
   showQuestion();
 }
 
-// ===== 顯示題目 =====
+// 顯示題目
 function showQuestion(){
   let q = questions[current];
   document.getElementById("question").innerText = q.q;
@@ -216,7 +209,7 @@ function showQuestion(){
   document.getElementById("optB").innerText = "B：" + q.B;
 }
 
-// ===== 回答 =====
+// 回答
 function answer(choice){
   let q = questions[current];
   result.push(choice==="A"?q.type[0]:q.type[1]);
@@ -229,29 +222,30 @@ function answer(choice){
   }
 }
 
-// ===== 結果 =====
+// 顯示結果
 function showResult(){
   document.getElementById("page2").classList.remove("active");
   document.getElementById("page3").classList.add("active");
 
   let mbti = result.join("");
-  let info = data[mbti];
+  let info = data[mbti] || data["INFP"];
 
-  if(!info){
-    info = data["INFP"];
-  }
-
-  document.getElementById("mbtiTitle").innerText = info.title;
-  document.getElementById("makeup").innerText = info.makeup;
+  document.getElementById("mbtiTitle").innerHTML = info.title.replace(" ", "<br>");
+  document.getElementById("makeup").innerHTML = "推薦妝容<br>" + info.makeup;
   document.getElementById("desc").innerText = info.desc;
   document.getElementById("modelImg").src = info.model;
 
   let productHTML = "";
   info.products.forEach(p=>{
+    let name = p.img.split("/").pop().split(".")[0];
+
     productHTML += `
-      <a href="https://www.amfairyland.com/products" target="_blank">
-        <img src="${p.img}">
-      </a>
+      <div class="product-item">
+        <a href="https://www.amfairyland.com/products" target="_blank">
+          <img src="${p.img}">
+        </a>
+        <div class="product-name">${name}</div>
+      </div>
     `;
   });
 
