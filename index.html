@@ -13,13 +13,14 @@ body{
   text-align:center;
 }
 
+/* 整體手機置中 */
 .page{
   display:none;
   padding:30px 16px;
+  max-width:420px;
+  margin:0 auto;
 }
-.active{
-  display:block;
-}
+.active{ display:block; }
 
 .btn{
   background:#eee;
@@ -36,6 +37,7 @@ body{
   border-radius:30px;
   font-size:22px;
 }
+
 .desc{
   font-size:15px;
   line-height:1.6;
@@ -47,6 +49,7 @@ body{
   font-size:20px;
   margin-bottom:20px;
 }
+
 .option{
   width:100%;
   padding:14px;
@@ -57,15 +60,22 @@ body{
   background:#eee;
 }
 
-/* 結果 */
+/* 結果卡片 */
 .card{
   background:#eee;
   border-radius:20px;
-  padding:8px 16px;
-  font-size:20px;
+  padding:10px 16px;
+  font-size:18px;
   margin:10px 0;
 }
 
+.result-title{
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+/* 人物圖 */
 .model-img{
   width:100%;
   max-width:260px;
@@ -73,42 +83,54 @@ body{
   margin:10px 0;
 }
 
+/* 文字 */
 .text{
   font-size:14px;
   line-height:1.6;
   margin:15px 0;
 }
 
-/* 產品 */
+/* 產品區 */
 .product-box{
   border:2px solid #333;
   padding:15px;
   margin-top:20px;
+  border-radius:12px;
 }
 
+/* ⭐關鍵：穩定3欄 */
 .products{
-  display:flex;
-  justify-content:space-around;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
   gap:10px;
+  margin-top:10px;
 }
 
 .product-item{
-  width:30%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
 
+/* ⭐關鍵：等大 + 不裁切 */
 .product-item img{
   width:100%;
-  aspect-ratio:1/1;
-  object-fit:cover;
+  max-width:90px;
+  height:90px;
+  object-fit:contain;
+  background:#fff;
+  padding:6px;
   border-radius:8px;
+  box-sizing:border-box;
 }
 
 .product-name{
   font-size:12px;
-  margin-top:5px;
+  margin-top:6px;
+  text-align:center;
 }
 
-/* 購買 */
+/* 按鈕 */
 .buy{
   display:inline-block;
   margin-top:25px;
@@ -119,8 +141,8 @@ body{
   border-radius:25px;
   text-decoration:none;
 }
-</style>
 
+</style>
 </head>
 
 <body>
@@ -130,8 +152,10 @@ body{
   <div class="title-box">💄 化妝MBTI測驗</div>
 
   <div class="desc">
-    嘿你知道嗎，MBTI其實會隨情境轉換<br>
-    一起來看看妳化妝時的MBTI是什麼吧
+嘿你知道嗎，MBTI其實會隨情境轉換<br>
+有些 I 人在工作時會用 E 人的方式去交際<br>
+有些時候 P 人會用 J 人的方式思考<br><br>
+一起來看看妳化妝時的MBTI是什麼吧～
   </div>
 
   <button class="btn" onclick="startQuiz()">開始 →</button>
@@ -147,11 +171,16 @@ body{
 <!-- 結果 -->
 <div id="page3" class="page">
 
+  <div class="result-title">測試結果</div>
+
   <div class="card" id="mbtiTitle"></div>
 
-  <img id="modelImg" class="model-img">
+  <div class="card">
+    推薦妝容<br>
+    <span id="makeup"></span>
+  </div>
 
-  <div class="card" id="makeup"></div>
+  <img id="modelImg" class="model-img">
 
   <div class="text" id="desc"></div>
 
@@ -168,7 +197,6 @@ body{
 
 <script>
 
-// 題目
 const questions = [
   {q:"你化完妝最在意的是？", A:"別人有沒有發現", B:"自己看起來舒服", type:["E","I"]},
   {q:"你覺得好看的妝是？", A:"乾淨無瑕", B:"有氛圍感", type:["S","N"]},
@@ -179,7 +207,6 @@ const questions = [
 let current = 0;
 let result = [];
 
-// 資料（示範）
 const data = {
 "INFP":{
   title:"🌷 INFP 人間仙女",
@@ -187,21 +214,19 @@ const data = {
   desc:"你屬於內斂又感受力很強的人，低飽和粉調讓你自然散發溫柔氣質。",
   model:"images/models/INFP.jpg",
   products:[
-    {img:"images/products/小蜜乳.png"},
-    {img:"images/products/小奶朵.png"},
-    {img:"images/products/小金桃.png"}
+    {img:"images/products/小蜜乳.png", name:"小蜜乳"},
+    {img:"images/products/小奶朵.png", name:"小奶朵"},
+    {img:"images/products/小金桃.png", name:"小金桃"}
   ]
 }
 };
 
-// 開始
 function startQuiz(){
   document.getElementById("page1").classList.remove("active");
   document.getElementById("page2").classList.add("active");
   showQuestion();
 }
 
-// 顯示題目
 function showQuestion(){
   let q = questions[current];
   document.getElementById("question").innerText = q.q;
@@ -209,7 +234,6 @@ function showQuestion(){
   document.getElementById("optB").innerText = "B：" + q.B;
 }
 
-// 回答
 function answer(choice){
   let q = questions[current];
   result.push(choice==="A"?q.type[0]:q.type[1]);
@@ -222,7 +246,6 @@ function answer(choice){
   }
 }
 
-// 顯示結果
 function showResult(){
   document.getElementById("page2").classList.remove("active");
   document.getElementById("page3").classList.add("active");
@@ -230,21 +253,18 @@ function showResult(){
   let mbti = result.join("");
   let info = data[mbti] || data["INFP"];
 
-  document.getElementById("mbtiTitle").innerHTML = info.title.replace(" ", "<br>");
-  document.getElementById("makeup").innerHTML = "推薦妝容<br>" + info.makeup;
+  document.getElementById("mbtiTitle").innerText = info.title;
+  document.getElementById("makeup").innerText = info.makeup;
   document.getElementById("desc").innerText = info.desc;
   document.getElementById("modelImg").src = info.model;
 
   let productHTML = "";
-  info.products.forEach(p=>{
-    let name = p.img.split("/").pop().split(".")[0];
 
+  info.products.forEach(p=>{
     productHTML += `
       <div class="product-item">
-        <a href="https://www.amfairyland.com/products" target="_blank">
-          <img src="${p.img}">
-        </a>
-        <div class="product-name">${name}</div>
+        <img src="${p.img}">
+        <div class="product-name">${p.name}</div>
       </div>
     `;
   });
