@@ -100,9 +100,20 @@ body{
   width:70px;
 }
 
+/* ✅ 改好的購買按鈕 */
 .buy{
+  display:inline-block;
   margin-top:30px;
-  font-size:24px;
+  font-size:20px;
+  text-decoration:none;
+  color:white;
+  background:#ff6b81;
+  padding:12px 30px;
+  border-radius:25px;
+}
+
+.buy:hover{
+  background:#ff4d6d;
 }
 </style>
 
@@ -154,7 +165,10 @@ body{
     <div class="products" id="products"></div>
   </div>
 
-  <div class="buy">去購買 →</div>
+  <!-- ✅ 可點擊導購 -->
+  <a href="https://www.amfairyland.com/products" target="_blank" class="buy">
+    找到我的命定妝 →
+  </a>
 
 </div>
 
@@ -172,7 +186,7 @@ const questions = [
 let current = 0;
 let result = [];
 
-// ===== 資料（先示範INFP，你可補16型）=====
+// ===== 資料 =====
 const data = {
 "INFP":{
   title:"🌷 INFP 人間仙女",
@@ -223,7 +237,6 @@ function showResult(){
   let mbti = result.join("");
   let info = data[mbti];
 
-  // 防呆
   if(!info){
     info = data["INFP"];
   }
@@ -235,7 +248,11 @@ function showResult(){
 
   let productHTML = "";
   info.products.forEach(p=>{
-    productHTML += `<img src="${p.img}">`;
+    productHTML += `
+      <a href="https://www.amfairyland.com/products" target="_blank">
+        <img src="${p.img}">
+      </a>
+    `;
   });
 
   document.getElementById("products").innerHTML = productHTML;
