@@ -54,8 +54,9 @@
 
         /* 模特兒圖片 */
         .model-img {
-            width: 80%;
-            display: block;
+            width: 80%;           /* 圖片寬度 */
+            display: block;       /* 轉為區塊元素，這是置中的前提 */
+            margin: 0 auto 20px;  /* 上 0, 左右自動(置中), 下 20px */
         }
 
         .makeup-name {
@@ -65,12 +66,12 @@
         }
 
         /* 描述文字區 */
-        .description {
+        description {
             font-size: 15px;
             line-height: 1.8;
             margin: 30px 0;
             padding: 0 10px;
-            text-align: justify;
+            text-align: center;   /* 改成置中，視覺上會跟上方的圖片對齊 */
         }
 
         /* 產品三欄佈局 */
