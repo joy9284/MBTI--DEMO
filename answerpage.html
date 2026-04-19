@@ -2,42 +2,49 @@
 <html lang="zh-Hant">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-<script src="main.js"></script>
+<script src="js/data.js"></script>
 <title>結果</title>
+<style>
+body{
+  margin:0;
+  font-family:sans-serif;
+  background:#f4e4ea;
+}
+  /* 圖 */
+.model{
+  width:100%;
+  max-width:260px;
+}
+
+/* 產品 */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+
+.grid img{
+  width:100%;
+  height:90px;
+  object-fit:contain;
+  background:#fff;
+}
+</style>
 </head>
 
 <body>
 
 <div class="container">
+  <h1 id="title"></h1>
+  <p id="makeup"></p>
+  <img id="model" class="model">
+  <p id="desc"></p>
 
-  <!-- 標題 -->
-  <div class="title-box" id="title"></div>
+  <div id="products" class="grid"></div>
 
-  <!-- 妝容卡 -->
-  <div class="makeup-card">
-    <div class="card-header">🔍 推薦妝容</div>
-
-    <img id="model" class="model">
-
-    <div class="card-footer" id="makeup"></div>
-  </div>
-
-  <!-- 描述 -->
-  <div class="desc" id="desc"></div>
-
-  <!-- 產品 -->
-  <div class="product-section">
-    <div class="product-title">🔍 命定化妝品</div>
-
-    <div class="products" id="products"></div>
-  </div>
-
-  <!-- CTA -->
-  <a href="https://www.amfairyland.com/products" target="_blank" class="buy">
-    去購買 →
+  <a href="https://www.amfairyland.com/products" target="_blank">
+    入手同款 →
   </a>
-
 </div>
 
 <script>
