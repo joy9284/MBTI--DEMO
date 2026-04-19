@@ -65,15 +65,21 @@
             margin: 0 auto ;  /* 上 0, 左右自動(置中), 下 20px */
         }
 
-        /* 描述文字區 */
-        .description {
-            font-size: 15px;
-            line-height: 1.8;
-            margin: 30px 0;
-            padding: 0 10px;
-            text-align: center;   /* 改成置中，視覺上會跟上方的圖片對齊 */
-        }
+/* 描述文字區：縮小下方邊距 */
+.description {
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 30px 0 10px 0; /* 修改點：上 30px, 下縮小為 10px */
+    padding: 0 10px;
+    text-align: center;
+}
 
+/* 妝容名稱圖片：移除上方多餘邊距，並可調整寬度 */
+.makeup-name {
+    width: 60%;           /* 建議不要 100% 避免太大，視圖片比例調整 */
+    display: block;
+    margin: 0 auto;       /* 修改點：移除下方的 20px，讓它更緊湊 */
+}
         /* 產品三欄佈局 */
         .product-grid {
             display: grid;
