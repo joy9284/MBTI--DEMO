@@ -1,49 +1,104 @@
 body{
   margin:0;
-  font-family:sans-serif;
-  background:#d9c6cb;
+  font-family:"微軟正黑體";
+  background:#e6d9dc;
 }
 
+/* 滿版 */
 .container{
-  max-width:420px;
-  margin:auto;
-  padding:20px;
+  width:100%;
+  min-height:100vh;
+  padding:30px 20px;
+  box-sizing:border-box;
   text-align:center;
 }
 
-/* 按鈕 */
-button{
-  width:100%;
-  padding:14px;
-  margin:10px 0;
-  border:none;
-  border-radius:20px;
+/* 標題膠囊 */
+.title-box{
+  display:inline-block;
   background:#eee;
-  font-size:16px;
+  padding:12px 24px;
+  border-radius:30px;
+  font-size:22px;
+  color:#6d5f5f;
+  margin-bottom:30px;
 }
 
-/* 圖 */
-.model{
+/* 妝容卡 */
+.makeup-card{
   width:100%;
   max-width:260px;
+  margin:0 auto;
+  border:2px solid #000;
 }
 
-/* 產品 */
-.grid{
+/* 上標題 */
+.card-header{
+  border-bottom:2px solid #000;
+  padding:6px;
+  font-size:14px;
+  background:#eee;
+}
+
+/* 圖片 */
+.model{
+  width:100%;
+  display:block;
+}
+
+/* 下標題 */
+.card-footer{
+  border-top:2px solid #000;
+  padding:6px;
+  font-size:14px;
+  background:#eee;
+}
+
+/* 描述 */
+.desc{
+  margin:30px 0;
+  font-size:16px;
+  line-height:1.8;
+  color:#6d5f5f;
+}
+
+/* 產品區 */
+.product-section{
+  border:2px solid #000;
+  padding:10px;
+}
+
+/* 標題 */
+.product-title{
+  border-bottom:2px solid #000;
+  padding-bottom:6px;
+  margin-bottom:10px;
+}
+
+/* 3欄 */
+.products{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:10px;
 }
 
-.grid img{
-  width:100%;
-  height:90px;
-  object-fit:contain;
-  background:#fff;
+/* 單品 */
+.products div{
+  text-align:center;
 }
 
-/* 手機優化 */
-@media (max-width:480px){
-  h1{font-size:22px;}
-  h2{font-size:18px;}
+/* 圖 */
+.products img{
+  width:100%;
+  height:80px;
+  object-fit:contain;
+}
+
+/* CTA */
+.buy{
+  display:block;
+  margin:40px 0;
+  font-size:22px;
+  text-decoration:none;
+  color:#6d5f5f;
 }
