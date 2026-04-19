@@ -18,7 +18,7 @@ button{
   margin:10px 0;
   border:none;
   border-radius:20px;
-  background:#eee;
+  background:#FFFFFF;
   font-size:16px;
 }
 
@@ -48,10 +48,7 @@ button{
   justify-content:center; /* 水平置中 */
 }
 
-.girl{
-  width:60%;        /* ⭐ 控制縮小比例 */
-  max-width:240px;  /* ⭐ 防止太大 */
-}
+
 
 /* 手機優化 */
 @media (max-width:480px){
