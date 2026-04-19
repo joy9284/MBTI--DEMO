@@ -42,6 +42,17 @@ button{
   background:#fff;
 }
 
+.img-box{
+  width:100%;
+  display:flex;
+  justify-content:center; /* 水平置中 */
+}
+
+.girl{
+  width:60%;        /* ⭐ 控制縮小比例 */
+  max-width:240px;  /* ⭐ 防止太大 */
+}
+
 /* 手機優化 */
 @media (max-width:480px){
   h1{font-size:22px;}
