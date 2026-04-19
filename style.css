@@ -46,13 +46,19 @@ button{
   background:#fff;
 }
 
+
+
 .img-box{
-  width:65%;
+  width:100%;
   display:flex;
-  justify-content:center; /* 水平置中 */
+  justify-content:center;
 }
 
-
+.img-box img{
+  width:100%;
+  max-width:260px;
+  height:auto;
+}
 
 /* 手機優化 */
 @media (max-width:480px){
