@@ -39,15 +39,4 @@ function renderResult(){
   document.getElementById("desc").innerText = info.desc;
   document.getElementById("model").src = info.model;
 
-  let html = "";
-  info.products.forEach(p=>{
-    html += `
-      <div>
-        <img src="${p.img}">
-        <p>${p.name}</p>
-      </div>
-    `;
-  });
-
-  document.getElementById("products").innerHTML = html;
 }
