@@ -12,25 +12,22 @@ body{
   background:#e6d9dc;
 }
 
-/* 外層置中 */
-.wrapper{
-  display:flex;
-  justify-content:center;
-}
-
-/* 主內容區（白邊效果） */
+/* ⭐ 滿版關鍵 */
 .container{
   width:100%;
-  max-width:420px;
-  min-height:100vh;
-  background:#e6d9dc;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
   text-align:center;
   padding:40px 20px;
   box-sizing:border-box;
 }
 
-/* 標題膠囊 */
+/* 標題 */
 .title-box{
+  margin-top:20px;
   display:inline-flex;
   align-items:center;
   gap:10px;
@@ -44,31 +41,27 @@ body{
 /* 內文 */
 .desc{
   margin-top:120px;
-  font-size:20px;
+  font-size:18px;
   line-height:2;
   color:#6d5f5f;
 }
 
 /* 按鈕 */
 .start-btn{
-  margin-top:120px;
+  margin-top:auto; /* ⭐ 直接貼底 */
+  margin-bottom:40px;
   padding:12px 30px;
   border:none;
   border-radius:20px;
   font-size:18px;
   background:#eee;
   color:#6d5f5f;
-  cursor:pointer;
 }
 
-/* 手機優化 */
+/* 小螢幕微調 */
 @media (max-width:480px){
   .desc{
     font-size:16px;
-    margin-top:80px;
-  }
-
-  .start-btn{
     margin-top:80px;
   }
 }
@@ -78,25 +71,23 @@ body{
 
 <body>
 
-<div class="wrapper">
-  <div class="container">
+<div class="container">
 
-    <div class="title-box">
-      💄 化妝MBTI測驗
-    </div>
-
-    <div class="desc">
-      嘿你知道嗎，MBTI其實會隨情境轉換<br>
-      有些I人在工作時會用E人的方式去交際<br>
-      有些時候P人會用J人的方式思考<br><br>
-      一起來看看妳化妝時的MBTI是什麼吧
-    </div>
-
-    <button class="start-btn" onclick="start()">
-      開始 →
-    </button>
-
+  <div class="title-box">
+    💄 化妝MBTI測驗
   </div>
+
+  <div class="desc">
+    嘿你知道嗎，MBTI其實會隨情境轉換<br>
+    有些I人在工作時會用E人的方式去交際<br>
+    有些時候P人會用J人的方式思考<br><br>
+    一起來看看妳化妝時的MBTI是什麼吧
+  </div>
+
+  <button class="start-btn" onclick="start()">
+    開始 →
+  </button>
+
 </div>
 
 <script>
