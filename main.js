@@ -3,7 +3,7 @@ const data = {
   "INFP":{
     title:"🌷 INFP 人間仙女",
     makeup:"溫柔氛圍妝",
-    desc:"低飽和粉調＝你的主場",
+    desc:"你屬於比較內斂、感受力很強的人，情緒細膩、容易被氛圍影響。不喜歡太強烈或太張揚的風格，比起吸引所有人，你更在意「剛剛好被看見」。",
     model:"images/models/INFP.jpg",
     products:[
       {img:"images/products/小蜜乳.png", name:"小蜜乳"},
