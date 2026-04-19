@@ -10,16 +10,34 @@
 <body>
 
 <div class="container">
-  <h1 id="title"></h1>
-  <p id="makeup"></p>
-  <img id="model" class="model">
-  <p id="desc"></p>
 
-  <div id="products" class="grid"></div>
+  <!-- 標題 -->
+  <div class="title-box" id="title"></div>
 
-  <a href="https://www.amfairyland.com/products" target="_blank">
-    入手同款 →
+  <!-- 妝容卡 -->
+  <div class="makeup-card">
+    <div class="card-header">🔍 推薦妝容</div>
+
+    <img id="model" class="model">
+
+    <div class="card-footer" id="makeup"></div>
+  </div>
+
+  <!-- 描述 -->
+  <div class="desc" id="desc"></div>
+
+  <!-- 產品 -->
+  <div class="product-section">
+    <div class="product-title">🔍 命定化妝品</div>
+
+    <div class="products" id="products"></div>
+  </div>
+
+  <!-- CTA -->
+  <a href="https://www.amfairyland.com/products" target="_blank" class="buy">
+    去購買 →
   </a>
+
 </div>
 
 <script>
