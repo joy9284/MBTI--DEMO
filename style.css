@@ -20,7 +20,11 @@ button{
   border-radius:20px;
   background:#FFFFFF;
   font-size:16px;
+
+    appearance:none;
+  -webkit-appearance:none;
 }
+
 
 /* 圖 */
 .model{
