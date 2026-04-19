@@ -24,8 +24,13 @@ function choose(value, nextPage){
 // ===== 結果頁用 =====
 function renderResult(){
   let result = JSON.parse(localStorage.getItem("result")) || [];
-  let mbti = result.join("");
 
+  if(result.length !== 4){
+    location.href = "index.html";
+    return;
+  }
+
+  let mbti = result.join("");
   let info = data[mbti] || data["INFP"];
 
   document.getElementById("title").innerText = info.title;
