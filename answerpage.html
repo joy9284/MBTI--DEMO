@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/data.js"></script>
+<title>結果</title>
+</head>
+
+<body>
+
+<div class="container">
+  <h1 id="title"></h1>
+  <p id="makeup"></p>
+  <img id="model" class="model">
+  <p id="desc"></p>
+
+  <div id="products" class="grid"></div>
+
+  <a href="https://www.amfairyland.com/products" target="_blank">
+    入手同款 →
+  </a>
+</div>
+
+<script>
+
+let result = JSON.parse(localStorage.getItem("result")) || [];
+let mbti = result.join("");
+
+let info = data[mbti] || data["INFP"];
+
+document.getElementById("title").innerText = info.title;
+document.getElementById("makeup").innerText = info.makeup;
+document.getElementById("desc").innerText = info.desc;
+document.getElementById("model").src = info.model;
+
+let html = "";
+info.products.forEach(p=>{
+  html += `
+    <div>
+      <img src="${p.img}">
+      <p>${p.name}</p>
+    </div>
+  `;
+});
+
+document.getElementById("products").innerHTML = html;
+
+</script>
+
+</body>
+</html>
