@@ -3,81 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<script src="main.js"></script>
 <title>化妝MBTI測驗</title>
-
-<style>
-body{
-  margin:0;
-  font-family:"微軟正黑體";
-  background:#e6d9dc;
-}
-
-/* ⭐ 滿版關鍵 */
-.container{
-  width:100%;
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:flex-start;
-  text-align:center;
-  padding:40px 20px;
-  box-sizing:border-box;
-}
-
-/* 標題 */
-.title-box{
-  margin-top:20px;
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  background:#eee;
-  padding:12px 20px;
-  border-radius:30px;
-  font-size:22px;
-  color:#6d5f5f;
-}
-
-/* 內文 */
-.desc{
-  margin-top:120px;
-  font-size:18px;
-  line-height:2;
-  color:#6d5f5f;
-}
-
-/* 按鈕 */
-.start-btn{
-  margin-top:auto; /* ⭐ 直接貼底 */
-  margin-bottom:40px;
-  padding:12px 30px;
-  border:none;
-  border-radius:20px;
-  font-size:18px;
-  background:#eee;
-  color:#6d5f5f;
-}
-
-  .title-box{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-}
-
-.title-box img{
-  height:22px;   /* ⭐ 控制跟文字差不多高 */
-  width:auto;
-}
-  
-/* 小螢幕微調 */
-@media (max-width:480px){
-  .desc{
-    font-size:16px;
-    margin-top:80px;
-  }
-}
-</style>
 
 </head>
 
@@ -101,13 +29,6 @@ body{
   </button>
 
 </div>
-
-<script>
-function start(){
-  localStorage.setItem("result", JSON.stringify([]));
-  location.href = "page1.html";
-}
-</script>
 
 </body>
 </html>
