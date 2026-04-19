@@ -38,7 +38,7 @@ function renderResult(){
   }
 
   let mbti = result.join("");
-  let info = data[mbti] || data["INFP"];
+  let info = data[mbti] || data["ESTJ"];
 
   document.getElementById("title").innerText = info.title;
   document.getElementById("makeup").src = info.makeup;
