@@ -4,7 +4,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
 <script src="main.js"></script>
-<script>renderResult();</script>
 <title>結果</title>
 </head>
 
@@ -24,29 +23,7 @@
 </div>
 
 <script>
-
-let result = JSON.parse(localStorage.getItem("result")) || [];
-let mbti = result.join("");
-
-let info = data[mbti] || data["INFP"];
-
-document.getElementById("title").innerText = info.title;
-document.getElementById("makeup").innerText = info.makeup;
-document.getElementById("desc").innerText = info.desc;
-document.getElementById("model").src = info.model;
-
-let html = "";
-info.products.forEach(p=>{
-  html += `
-    <div>
-      <img src="${p.img}">
-      <p>${p.name}</p>
-    </div>
-  `;
-});
-
-document.getElementById("products").innerHTML = html;
-
+renderResult();
 </script>
 
 </body>
