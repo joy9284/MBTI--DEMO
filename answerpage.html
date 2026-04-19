@@ -60,9 +60,9 @@
         }
 
         .makeup-name {
-            padding: 10px;
-            border-top: 2px solid #000;
-            font-size: 16px;
+            width: 80%;           /* 圖片寬度 */
+            display: block;       /* 轉為區塊元素，這是置中的前提 */
+            margin: 0 auto 20px;  /* 上 0, 左右自動(置中), 下 20px */
         }
 
         /* 描述文字區 */
@@ -117,14 +117,11 @@
     <div class="title-box" id="title"></div>
 
     <img id="model" class="model-img">
-    <div id="makeup" class="makeup-name"></div>
-
+    
     <div class="description" id="desc"></div>
+    
+    <img id="makeup" class="makeup-name">
 
-    <div class="border-box">
-        <div class="label-header">🔍 命中化妝品</div>
-        <div id="products" class="product-grid"></div>
-    </div>
 
     <a href="https://www.amfairyland.com/products" class="buy-link">去購買 ➔</a>
 </div>
