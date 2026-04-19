@@ -35,7 +35,7 @@ function renderResult(){
   let info = data[mbti] || data["INFP"];
 
   document.getElementById("title").innerText = info.title;
-  document.getElementById("makeup").innerText = info.makeup;
+  document.getElementById("makeup").src = info.makeup;
   document.getElementById("desc").innerText = info.desc;
   document.getElementById("model").src = info.model;
 
