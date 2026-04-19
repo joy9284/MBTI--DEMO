@@ -21,6 +21,12 @@ function choose(value, nextPage){
   location.href = nextPage;
 }
 
+// ===== 開始 =====
+function start(){
+  localStorage.setItem("result", JSON.stringify([]));
+  location.href = "page1.html";
+}
+
 // ===== 結果頁用 =====
 function renderResult(){
   let result = JSON.parse(localStorage.getItem("result")) || [];
