@@ -4,13 +4,86 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
 <script src="main.js"></script>
-<title>Q1</title>
+<title>Q4</title>
+<style>
+  body{
+  margin:0;
+  font-family:sans-serif;
+  background:#f4e4ea;
+}
+
+/* 容器：手機優先 + 桌機置中 */
+.container{
+  width:100%;
+  max-width:420px;
+  margin:auto;
+
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  padding:40px 20px;
+  box-sizing:border-box;
+  text-align:center;
+}
+
+/* 圖片區 */
+.img-box{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  margin-bottom:20px;
+}
+
+.img-box img{
+  width:90%;
+  max-width:260px;
+  height:auto;
+}
+
+/* 按鈕 */
+button{
+  width:100%;
+  padding:14px;
+  margin:10px 0;
+
+  border:none;
+  border-radius:20px;
+  background:#fff;
+
+  font-size:16px;
+
+  appearance:none;
+  -webkit-appearance:none;
+}
+
+/* 手機微調 */
+@media (max-width:480px){
+
+  .container{
+    padding:30px 16px;
+  }
+
+  button{
+    font-size:14px;
+    padding:12px;
+  }
+
+  .img-box img{
+    max-width:200px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <div class="container">
-  <h2>你的化妝習慣？</h2>
+  
+  <div class="img-box">
+    <img src="images/10.png" alt="page1_girl" class="girl">
+  </div>
   
   <button onclick="choose('J','answerpage.html')">固定流程</button>
   <button onclick="choose('P','answerpage.html')">看心情</button>
