@@ -1,7 +1,7 @@
 // ===== 資料 =====
 const data = {
   "INFP":{
-    title:" INFP 人間仙女",
+    title:"🌷 INFP 人間仙女",
     makeup:"images/products/INFP.png",
     desc:"你屬於比較內斂、感受力很強的人，情緒細膩、容易被氛圍影響。不喜歡太強烈或太張揚的風格，比起吸引所有人，你更在意「剛剛好被看見」。",
     model:"images/models/INFP.png",
@@ -12,12 +12,11 @@ const data = {
     desc: "你是溫暖且慷慨的照顧者，天生具有敏銳的觀察力，總能察覺他人的需求並給予最及時的協助。在人群中，你就是最穩定且充滿愛的存在。",
     model: "images/models/ESFJ.png",
   },
-    "INTJ": {
-    title: " INTJ 高冷策士女王", // 你可以之後修改標題
-    makeup: "images/products/INTJ.png", // 建議換成 ESFJ 對應的圖片路徑
-    desc: "你給人的第一印象通常是理性、冷靜、有距離感。不太喜歡過度甜美或可愛的妝感，因為那不符合你的氣場。在人群中你適合輪廓清晰、線條乾淨的妝容，這種妝感能強化你本身的掌控感與高級感
-",
-    model: "images/models/INTJ.png",
+    "ESTJ": {
+    title: "INTJ 冷感策士女王", // 你可以之後修改標題
+    makeup: "images/products/ESFJ.png", // 建議換成 ESFJ 對應的圖片路徑
+    desc: "你是溫暖且慷慨的照顧者，天生具有敏銳的觀察力，總能察覺他人的需求並給予最及時的協助。在人群中，你就是最穩定且充滿愛的存在。",
+    model: "images/models/ESFJ.png",
   }
 };
 
