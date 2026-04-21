@@ -14,9 +14,9 @@ const data = {
   },
     "ESTJ": {
     title: "INTJ 冷感策士女王", // 你可以之後修改標題
-    makeup: "images/products/ESFJ.png", // 建議換成 ESFJ 對應的圖片路徑
+    makeup: "images/products/INTJ.png", // 建議換成 ESFJ 對應的圖片路徑
     desc: "你是溫暖且慷慨的照顧者，天生具有敏銳的觀察力，總能察覺他人的需求並給予最及時的協助。在人群中，你就是最穩定且充滿愛的存在。",
-    model: "images/models/ESFJ.png",
+    model: "images/models/INNTJ.png",
   }
 };
 
