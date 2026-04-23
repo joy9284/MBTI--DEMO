@@ -23,6 +23,7 @@ const data = {
     makeup: "images/products/INTP.png", // 建議換成 ESFJ 對應的圖片路徑
     desc: "你喜歡自然、舒服、不費力但依然有質感的感覺。很適合低存在感的裸妝系路線，整體像素顏升級版，乾淨、聰明、帶點隨性。",
     model: "images/models/INTP.png",
+    },
 };
 
 // ===== 功能 =====
