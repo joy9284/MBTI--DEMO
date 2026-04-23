@@ -12,7 +12,6 @@ body{
   background:#f4e4ea;
 }
 
-/* ⭐ 滿版關鍵 */
 .container{
   width:100%;
   height:100vh;
@@ -38,17 +37,38 @@ body{
   color:#6d5f5f;
 }
 
-/* 內文 */
-.desc{
-  margin-top:120px;
+.title-box img{
+  height:20px;
+  transform:translateY(1px);
+}
+
+/* ⭐ 每一行都獨立動畫 */
+.line{
   font-size:18px;
   line-height:2;
   color:#6d5f5f;
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp 0.8s ease forwards;
+}
+
+/* ⭐ 延遲控制 */
+.l1{ animation-delay:0.2s; }
+.l2{ animation-delay:0.6s; }
+.l3{ animation-delay:1.0s; }
+.l4{ animation-delay:1.4s; }
+
+/* 動畫 */
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 /* 按鈕 */
 .start-btn{
-  margin-top:auto; /* ⭐ 直接貼底 */
+  margin-top:auto;
   margin-bottom:40px;
   padding:12px 30px;
   border:none;
@@ -58,20 +78,7 @@ body{
   color:#6d5f5f;
 }
 
-.title-box img{
-  height:20px;
-  transform:translateY(1px); /* ⭐ 微下移，會更對齊 */
-}
-  
-/* 小螢幕微調 */
-@media (max-width:480px){
-  .desc{
-    font-size:16px;
-    margin-top:80px;
-  }
-}
 </style>
-
 </head>
 
 <body>
@@ -79,15 +86,15 @@ body{
 <div class="container">
 
   <div class="title-box">
-    <img src="images/標題小口紅.png" alt="icon">化妝MBTI測驗
+    <img src="images/標題小口紅.png">
+    化妝MBTI測驗
   </div>
 
-  <div class="desc">
-    嘿你知道嗎，MBTI其實會隨情境轉換<br>
-    有些I人在工作時會用E人的方式去交際<br>
-    有些時候P人會用J人的方式思考<br><br>
-    一起來看看妳化妝時的MBTI是什麼吧
-  </div>
+  <!-- ⭐ 逐行 -->
+  <div class="line l1">嘿你知道嗎，MBTI其實會隨情境轉換</div>
+  <div class="line l2">有些I人在工作時會用E人的方式去交際</div>
+  <div class="line l3">有些時候P人會用J人的方式思考</div>
+  <div class="line l4">一起來看看妳化妝時的MBTI是什麼吧</div>
 
   <button class="start-btn" onclick="start()">
     開始 →
