@@ -23,7 +23,18 @@ const data = {
     makeup: "images/products/INTP.png", // 建議換成 ESFJ 對應的圖片路徑
     desc: "你喜歡自然、舒服、不費力但依然有質感的感覺。很適合低存在感的裸妝系路線，整體像素顏升級版，乾淨、聰明、帶點隨性。",
     model: "images/models/INTP.png",
-    },
+  },
+    "ENTJ": {
+    title: "ENTJ 俐落女強人", // 你可以之後修改標題
+    makeup: "images/products/ENTJ.png", // 建議換成 ESFJ 對應的圖片路徑
+    desc: "你很有目標感，走到哪都像在掌控局面。最適合有份量、有存在感的妝容立體修容能強化你的輪廓，紅唇則會讓整體氣場直接拉滿。。很適合低存在感的裸妝系路線，整體像素顏升級版，乾淨、聰明、帶點隨性。",
+    model: "images/models/ENTJ.png",
+   },  
+    "ENTP": {
+    title: "ENTP 俐落女強人", // 你可以之後修改標題
+    makeup: "images/products/ENTP.png", // 建議換成 ESFJ 對應的圖片路徑
+    desc: "你很有自己的想法，喜歡新鮮感，也不怕嘗試不同風格。標準模板型妝容對你來說太無聊。你很適合玩色眼妝、亮面唇、甚至一些特殊點綴，例如彩色眼線或亮片。這種妝感能把你的靈動感和有趣個性完全表現出來。",
+    model: "images/models/ENTP.png",
 };
 
 // ===== 功能 =====
