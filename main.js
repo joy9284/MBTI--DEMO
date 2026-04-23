@@ -49,7 +49,7 @@ const data = {
     model: "images/models/ENFP.png",
   },
   "ISTJ": {
-    title: "ISTJ｜元氣小太陽", // 你可以之後修改標題
+    title: "ISTJ｜高冷學姊", // 你可以之後修改標題
     makeup: "images/products/ISTJ.png", // 建議換成 ESFJ 對應的圖片路徑
     desc: "你做事穩定、有邏輯，也很重視細節。不需要太多花俏元素，乾乾淨淨的淡妝才是你的核心。日常通勤妝妝感像你本人一樣：看似低調，但很有質感。",
     model: "images/models/ISTJ.png",
