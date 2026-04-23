@@ -17,7 +17,12 @@ const data = {
     makeup: "images/products/INTJ.png", // 建議換成 ESFJ 對應的圖片路徑
     desc: "你給人的第一印象通常是理性、冷靜、有距離感，不太喜歡過度甜美或可愛的妝感，因為那不符合你的氣場，你適合輪廓清晰、線條乾淨的妝容，這種妝感能強化你本身的掌控感與高級感。",
     model: "images/models/INTJ.png",
-  }
+  },
+  "INTP": {
+    title: "INTP 慵懶少女", // 你可以之後修改標題
+    makeup: "images/products/INTP.png", // 建議換成 ESFJ 對應的圖片路徑
+    desc: "你喜歡自然、舒服、不費力但依然有質感的感覺。很適合低存在感的裸妝系路線，整體像素顏升級版，乾淨、聰明、帶點隨性。",
+    model: "images/models/INTP.png",
 };
 
 // ===== 功能 =====
