@@ -101,6 +101,7 @@ const data = {
     makeup: "images/products/ESFP.png", // 建議換成 ESFJ 對應的圖片路徑
     desc: "閃閃亮亮的派對妝容最適合你的性格!你很喜歡熱鬧的氛圍，也很享受成為目光的焦點，總是人群中充滿活力又閃閃發光的存在，走到哪裡都像自帶聚光燈!",
     model: "images/models/ESFP.png",
+   },
 };
 
 // ===== 功能 =====
