@@ -16,7 +16,7 @@ const data = {
     title: "INTJ 冷感策士女王", // 你可以之後修改標題
     makeup: "images/products/INTJ.png", // 建議換成 ESFJ 對應的圖片路徑
     desc: "你給人的第一印象通常是理性、冷靜、有距離感，不太喜歡過度甜美或可愛的妝感，因為那不符合你的氣場，你適合輪廓清晰、線條乾淨的妝容，這種妝感能強化你本身的掌控感與高級感。",
-    model: "images/models/INNTJ.png",
+    model: "images/models/INTJ.png",
   }
 };
 
