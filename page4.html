@@ -6,13 +6,13 @@
 <script src="main.js"></script>
 <title>Q4</title>
 <style>
-  body{
+body{
   margin:0;
   font-family:sans-serif;
   background:#f4e4ea;
 }
 
-/* 容器：手機優先 + 桌機置中 */
+/* ⭐ 全頁結構 */
 .container{
   width:100%;
   max-width:420px;
@@ -28,50 +28,61 @@
   text-align:center;
 }
 
-/* 圖片區 */
+/* ⭐ 圖片區：置中 + 放大 */
 .img-box{
-  width:100%;
+  flex:1; /* ⭐ 吃掉上半部空間，讓圖片自然置中 */
   display:flex;
   justify-content:center;
-  margin-bottom:20px;
+  align-items:center;
 }
 
 .img-box img{
-  width:90%;
-  max-width:260px;
+  width:100%;
+  max-width:320px; /* ⭐ 放大重點 */
   height:auto;
+}
+
+/* ⭐ 按鈕區：往下 1/3 */
+.button-area{
+  width:100%;
+  margin-top:auto; /* ⭐ 推到底部 */
+  padding-bottom:80px; /* ⭐ 不要貼邊 */
+  display:flex;
+  flex-direction:column;
+  gap:12px;
 }
 
 /* 按鈕 */
 button{
   width:100%;
-  padding:14px;
+  padding:16px 14px;
   margin:10px 0;
 
   border:none;
   border-radius:20px;
   background:#fff;
 
-  font-size:16px;
+  /* ⭐ 重點 */
+  font-size:18px;        /* 變大 */
+  color:#6f5544;         /* 字色 */
+  letter-spacing:1.5px;   /* 字距加寬 */
 
   appearance:none;
   -webkit-appearance:none;
+
+  text-decoration:none;
 }
 
 /* 手機微調 */
 @media (max-width:480px){
 
-  .container{
-    padding:30px 16px;
+  .img-box img{
+    max-width:260px;
   }
 
   button{
     font-size:14px;
     padding:12px;
-  }
-
-  .img-box img{
-    max-width:200px;
   }
 }
 </style>
