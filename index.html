@@ -12,18 +12,18 @@ body{
   background:#f4e4ea;
 }
 
-/* ⭐ 全頁置中 */
+/* 全頁置中 */
 .container{
   width:100%;
   min-height:100vh;
   display:flex;
   flex-direction:column;
   align-items:center;
-  justify-content:center; /* ⭐ 上下置中關鍵 */
+  justify-content:center;
   text-align:center;
   padding:40px 20px;
   box-sizing:border-box;
-  gap:30px; /* ⭐ 控制整體間距 */
+  gap:30px;
 }
 
 /* 標題 */
@@ -54,32 +54,48 @@ body{
   }
 }
 
-/* ⭐ 文字區塊（拉開跟標題距離） */
+/* 文字區 */
 .text-box{
   display:flex;
   flex-direction:column;
-  gap:24px; /* ⭐ 每行間距 */
+  gap:24px;
 }
 
-/* 逐行動畫 */
+/* ⭐ 關鍵：先全部隱藏 */
 .line{
   font-size:18px;
   line-height:2;
   color:#6d5f5f;
 
   opacity:0;
-  transform:translateY(25px);
-
-  animation:fadeUp 1.8s ease forwards;
 }
 
-/* ⭐ 延遲（可以再慢一點） */
-.l1{ animation-delay:0.6s; }
-.l2{ animation-delay:2.s; }
-.l3{ animation-delay:3.4s; }
-.l4{ animation-delay:5.0s; }
+/* ⭐ 用「分開動畫」避免亂序 */
+.l1{
+  animation:fadeUp 1.8s ease forwards;
+  animation-delay:0.6s;
+}
+
+.l2{
+  animation:fadeUp 1.8s ease forwards;
+  animation-delay:2.2s;
+}
+
+.l3{
+  animation:fadeUp 1.8s ease forwards;
+  animation-delay:3.8s;
+}
+
+.l4{
+  animation:fadeUp 1.8s ease forwards;
+  animation-delay:5.4s;
+}
 
 @keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(25px);
+  }
   to{
     opacity:1;
     transform:translateY(0);
